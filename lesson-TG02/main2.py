@@ -71,6 +71,7 @@ async def doc(message: Message):
     doc = FSInputFile('Синтаксис в Python.pdf')
     await bot.send_document(message.chat.id, doc)
 
+
 @dp.message(Command('training'))
 async def training(message: Message):
     training_list = [
