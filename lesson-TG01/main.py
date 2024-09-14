@@ -75,6 +75,14 @@ def get_weather(city):
     return response.json()
 
 
+@dp.message()
+async def echo(message: Message):
+    if message.text.lower() == 'тест':
+        await message.answer('Тестируем...')
+    else:
+        await message.send_copy(chat_id=message.chat.id)
+
+
 async def main():
     await dp.start_polling(bot)
 
